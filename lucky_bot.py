@@ -21,7 +21,7 @@ import time
 # ─────────────────────────────────────────────
 #  ⚙️  CONFIGURATION
 # ─────────────────────────────────────────────
-BOT_TOKEN    = "MTQ3NzYzMjM1NDQ1NjQzNjc1Nw.GYFqrt.7VJDwHl0p_wx51R5YIXxZPJff33ITF4yI-8iPk"        # ← Enter your token here!
+BOT_TOKEN    = "MTQ3NzYzMjM1NDQ1NjQzNjc1Nw.G31KmC.WnojhcltF_NEjpd8XKz51-HRMBCsGw6lQwle2o"        # ← Enter your token here!
 CHANNEL_ID   = 1476024477195436102
 BASE_URL     = "http://luckycheats.atwebpages.com/lucky_auth.php"
 ADMIN_USER   = "LuckyCheats"
@@ -45,7 +45,7 @@ def save_used(data):
 
 def generate_key():
     number = random.randint(10000000, 99999999)  # 8 zufällige Zahlen
-    return f"LuckyCheats-trial-{number}"
+    return f"Revise-trial-{number}"
 
 def do_login():
     r = requests.get(BASE_URL, params={"action": "login_step1", "email": ADMIN_USER, "pass": ADMIN_PASS})
@@ -137,13 +137,13 @@ class KeyButtonView(View):
         # ── Send key via DM ──
         try:
             dm_embed = discord.Embed(
-                title="🎉 Your LuckyCheats Free Trial Key",
+                title="🎉 Your Revise Free Trial Key",
                 color=0x00FF88
             )
             dm_embed.add_field(name="🔑 Key", value=f"```{new_key}```", inline=False)
             dm_embed.add_field(name="⏳ Valid for", value="**1 Hour** starting now", inline=True)
             dm_embed.add_field(name="⚠️ Note", value="Your PC will be bound on first launch (HWID).", inline=False)
-            dm_embed.set_footer(text="LuckyCheats • Enjoy!")
+            dm_embed.set_footer(text="Revice Service • Enjoy!")
 
             await interaction.user.send(embed=dm_embed)
 
@@ -202,7 +202,7 @@ async def on_ready():
         ),
         color=0x00FF88
     )
-    embed.set_footer(text="LuckyCheats • Powered by luckycheats.atwebpages.com")
+    embed.set_footer(text="Revise Service • Made by Radman")
 
     await channel.send(embed=embed, view=KeyButtonView())
     print("[Bot] ✅ Button message sent!")
